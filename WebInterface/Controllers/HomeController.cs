@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataProcessor;
 
 namespace WebInterface.Controllers
 {
@@ -24,6 +25,19 @@ namespace WebInterface.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult UserDataInput()
+        {            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UserDataInput(UserDataModel userData)
+        {
+            UserDataProcessing.SaveToFile(userData);
             return View();
         }
     }
