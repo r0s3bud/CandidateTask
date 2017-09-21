@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebInterface", "WebInterface\WebInterface.csproj", "{E7DF9821-8E06-4048-8518-45FBA62BEF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessor", "..\DataProcessor\DataProcessor\DataProcessor.csproj", "{A4BDF621-28E1-49FF-8DD7-EA8E38F9A8EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessor", "DataProcessor\DataProcessor\DataProcessor.csproj", "{A4BDF621-28E1-49FF-8DD7-EA8E38F9A8EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

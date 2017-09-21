@@ -209,7 +209,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataProcessor\DataProcessor\DataProcessor.csproj">
+    <ProjectReference Include="..\DataProcessor\DataProcessor\DataProcessor.csproj">
       <Project>{a4bdf621-28e1-49ff-8dd7-ea8e38f9a8eb}</Project>
       <Name>DataProcessor</Name>
     </ProjectReference>
