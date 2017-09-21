@@ -24,7 +24,7 @@
                 Last name : @Html.TextBoxFor(s => s.LastName) <br />
                 Address : @Html.TextBoxFor(s => s.Address) <br />
                 Gender : @Html.EnumDropDownListFor(s => s.UserGender, new { @class = "form-group" })> <br />
-                Age : @Html.TextBoxFor(s => s.Age) <br />
+                Age : @Html.TextBoxFor(s => s.Age, new { @type = "number" }) <br />
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>

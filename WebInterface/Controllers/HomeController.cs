@@ -8,12 +8,12 @@ using DataProcessor;
 namespace WebInterface.Controllers
 {
     public class HomeController : Controller
-    {
+    {        
         private IUserStorage storage;
 
         public HomeController()
         {
-            storage = new FileUserDataStorage();
+            storage = new FileUserDataStorage();            
         }
         
         public ActionResult Index()
@@ -44,7 +44,7 @@ namespace WebInterface.Controllers
         [HttpPost]
         public ActionResult UserDataInput(UserDataModel userData)
         {
-            storage.Save(userData);
+            storage.Save(userData);            
             return View();
         }
     }
