@@ -9,6 +9,13 @@ namespace WebInterface.Controllers
 {
     public class HomeController : Controller
     {
+        private IUserStorage storage;
+
+        public HomeController()
+        {
+            storage = new FileUserDataStorage();
+        }
+        
         public ActionResult Index()
         {
             return View();
@@ -37,7 +44,7 @@ namespace WebInterface.Controllers
         [HttpPost]
         public ActionResult UserDataInput(UserDataModel userData)
         {
-            UserDataProcessing.SaveToFile(userData);
+            storage.Save(userData);
             return View();
         }
     }
