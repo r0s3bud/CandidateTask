@@ -8,12 +8,12 @@ using DataProcessor;
 namespace WebInterface.Controllers
 {
     public class HomeController : Controller
-    {        
-        private IUserStorage storage;
+    {
+        private readonly DataLogger logger;
 
         public HomeController()
         {
-            storage = new FileUserDataStorage();            
+            logger = new DataLogger();
         }
         
         public ActionResult Index()
@@ -44,8 +44,30 @@ namespace WebInterface.Controllers
         [HttpPost]
         public ActionResult UserDataInput(UserDataModel userData)
         {
-            storage.Save(userData);            
+            var userDataList = GetUserDataFromSession();
+            userDataList.Add(userData);
+            Session["Data for users"] = userDataList;
             return View();
         }
+
+        [HttpPost]
+        public ActionResult UserDataLog()
+        {
+            List<UserDataModel> dataToLog = GetUserDataFromSession();
+            if (dataToLog.Any())
+            {
+                logger.Log(dataToLog);
+                Session.Clear();                
+            } 
+            
+            return View("UserDataInput");
+        }
+
+        #region Helper methods          
+            private List<UserDataModel> GetUserDataFromSession()
+            {
+                return (List<UserDataModel>)Session["Data for users"] ?? new List<UserDataModel>();
+            }        
+        #endregion
     }
 }

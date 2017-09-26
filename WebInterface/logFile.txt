@@ -1,0 +1,2 @@
+2017-09-26 23:26:16.1577|INFO|UserDataLogger|log,file
+2017-09-26 23:27:07.3387|INFO|UserDataLogger|is,it

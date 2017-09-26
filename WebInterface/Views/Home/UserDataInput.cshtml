@@ -10,7 +10,11 @@
 <h2>UserDataInput</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm(
+    "UserDataInput",
+    "Home",
+    FormMethod.Post
+    ))
 {
     @Html.AntiForgeryToken()
     
@@ -30,6 +34,10 @@
         </div>
     </div>
 }
+
+<form method="post" action="UserDataLog">
+    <input type="submit" value="Log It" />
+</form>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

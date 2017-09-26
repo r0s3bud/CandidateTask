@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Data.Entity.SqlServer;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,3 +34,11 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+internal static class MissingDllHack
+{
+    // Must reference a type in EntityFramework.SqlServer.dll so that this dll will be
+    // included in the output folder of referencing projects without requiring a direct 
+    // dependency on Entity Framework.
+    private static SqlProviderServices instance = SqlProviderServices.Instance;
+}
